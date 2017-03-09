@@ -1,0 +1,23 @@
+{
+  "name": "tsbot",
+  "version": "1.0.0",
+  "description": "Simple TeamSpeak3 bot for private use",
+  "main": "index.js",
+  "dependencies": {
+    "node-teamspeak": "^1.0.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/iglosiggio/tsbot.git"
+  },
+  "author": "Ignacio E. Losiggio",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/iglosiggio/tsbot/issues"
+  },
+  "homepage": "https://github.com/iglosiggio/tsbot#readme"
+}
