@@ -21,6 +21,14 @@ TS.prototype = {
 				else accept(response);
 			}));
 	},
+	sendMany(...commands) {
+		const commandPromises = commands.map(
+			(command) => Array.isArray(command)
+				? this.send(...command)
+				: this.send(command.name, command.args)
+		);
+		return Promise.all(commandPromises);
+	},
 	event(name) {
 		return new Promise((accept) =>
 			this._client.once(name, accept));
@@ -36,6 +44,6 @@ TS.prototype = {
 	on(...args) {
 		return this._client.on(...args);
 	}
-};
+}
 
 module.exports = TS;
