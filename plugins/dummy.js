@@ -1,20 +1,20 @@
 module.exports = {
-  name: 'Dummy',
-  description: 'A test module',
-  commands: {
-      private: {
-        echo
-      },
-      channel: {
-        echo,
-        say,
-        nick
-      }
-  },
+	name: 'Dummy',
+	description: 'A test module',
+	commands: {
+		private: {
+			echo
+		},
+		channel: {
+			echo,
+			say,
+			nick
+		}
+	},
 
-  init(ts) {
-    console.log("[DUMMY] Init!");
-  }
+	init(ts) {
+		console.log("[DUMMY] Init!");
+	}
 };
 
 async function echo(ts, message) {
