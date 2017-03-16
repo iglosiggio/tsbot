@@ -1,6 +1,7 @@
 'use strict';
 
 const TS = require('./ts-wrapper');
+const requirePlugin('./require-plugin').init();
 const {addToProto} = require('./utils');
 
 function IncomingMessage(ts, message) {

@@ -1,22 +1,3 @@
-module.exports = {
-	name: 'Core',
-	description: 'Core functionality for the TSBot',
-	commands: {
-		channel: {
-			list_plugins,
-			joinchannel
-		},
-		private: {
-			list_plugins,
-			followme,
-		}
-	},
-
-	init(ts) {
-		console.log('Loading the core module!');
-	}
-}
-
 async function list_plugins(ts, message) {
 	const response = ts.plugins
 		.map(({name, description}) => name + ': ' + description)
@@ -39,3 +20,26 @@ async function joinchannel(ts, message) {
 		await message.respond('No se ha encontrado el channel "' + pattern + '"')
 	}
 }
+
+describe(list_plugins, 'Lists the plugins loaded on the bot');
+describe(followme, 'Makes the bot join your current channel');
+describe(joinchannel, 'Makes the bot join a given channel');
+
+{
+	name: 'Core',
+	description: 'Core functionality for the TSBot',
+	commands: {
+		channel: {
+			list_plugins,
+			joinchannel
+		},
+		private: {
+			list_plugins,
+			followme,
+		}
+	},
+
+	init(ts) {
+		console.log('Loading the core module!');
+	}
+};
